@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ashu-app-ui
+  name: ashu-app-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ashu-app-ui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ashu-app-ui
+    spec:
+      containers:
+      - image: dockerashu/ashu-ui-app:appv1
+        name: ashu-ui-app
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
